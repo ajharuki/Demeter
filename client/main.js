@@ -1,32 +1,45 @@
 import { Template } from 'meteor/templating';
-//import '../imports/api/m2x.js';
 import { Session } from 'meteor/session';
-//import angular from 'angular';
-//import angularMeteor from 'angular-meteor';
-
-// angular.module('demeter', [
-//   angularMeteor
-// ]);
-//
-//
 
 
 if (Meteor.isClient) {
-  Template.plswork.events({
+  Template.dataStream.events({
     'click button'(event, instance) {
       // increment the counter when button is clicked
       Meteor.call('please_work', function (err, result){
         if(err)
           console.log(err);
-        console.log(result);
-        Session.set('test', result);
+        var fixedResults = JSON.parse(result.content);
+        fixedResults = fixedResults.streams;
+        console.log(fixedResults);
+        Session.set('stream', fixedResults);
       })
     },
   });
 
-  Template.plswork.helpers({
-    test_pull: function() {
-      return Session.get('test');
+  Template.dataStream.helpers({
+    pullHumidity: function() {
+      if (Session.get('stream') !== undefined) {
+
+        var fullArray = Session.get('stream');
+        var humidityArray = fullArray[0];
+        return humidityArray.value;
+      }
+    },
+    pullTemperature: function() {
+      if (Session.get('stream') !== undefined) {
+        var fullArray = Session.get('stream');
+        var tempArray = fullArray[1];
+        return tempArray.value;
+      }
+    },
+    pullLight: function() {
+      if (Session.get('stream') !== undefined) {
+
+        var fullArray = Session.get('stream');
+        var lightArray = fullArray[2];
+        return lightArray.value;
+      }
     }
   });
 }
