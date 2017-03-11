@@ -30,8 +30,29 @@ if (Meteor.isServer) {
         var person = getPerson.apply(userId, ["jlarobello"])
 
         // Verify that the method does what we expected
-        assert.equal(Person.find().count(), 1);
+        assert.notEqual(person, null);
         assert.equal(person.username, "jlarobello");
+
+        // Remove person
+        Person.remove({"username": "jlarobello"})
+      }),
+      it('can add a badge to a person', () => {
+        const addPerson = Meteor.server.method_handlers['person.insert'];
+        const addBadge = Meteor.server.method_handlers['person.addBadge'];
+        const getPerson = Meteor.server.method_handlers['person.getByUsername'];
+
+        addPerson.apply(userId,["jlarobello","1234","1234"]);
+        addBadge.apply(userId,["jlarobello","kdlsakf3234"]);
+        addBadge.apply(userId,["jlarobello","skldjf23434"]);
+        addBadge.apply(userId,["jlarobello","skldjf23434"]);
+
+        var person = getPerson.apply(userId, ["jlarobello"])
+
+        // Verify that the method does what we expected
+        assert.equal(Person.find().count(), 1);
+        assert.equal(person.badges.length, 2);
+        assert.equal(person.badges[0], "kdlsakf3234");
+        assert.equal(person.badges[1], "skldjf23434");
 
         // Remove person
         Person.remove({"username": "jlarobello"})

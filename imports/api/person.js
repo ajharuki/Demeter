@@ -35,10 +35,33 @@ Meteor.methods({
   'person.getByUsername' (username) {
     check(username, String);
 
-    if (Person.findOne({username})) {
-      return Person.findOne({username});
+    var person = Person.findOne({username});
+
+    if (person) {
+      return person;
     }
 
     return null;
+  },
+  'person.addBadge' (username, badgeId) {
+    check(username, String);
+    check(badgeId, String);
+
+    var person = Person.findOne({username});
+
+    if (person) {
+      if (!badgeExist(person.badges, badgeId)){
+        Person.update({username}, { $push: { badges: badgeId}});
+      }
+    }
   }
-});
+})
+
+function badgeExist(arr, badgeId) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] == badgeId) {
+      return true;
+    }
+  }
+  return false;
+};
