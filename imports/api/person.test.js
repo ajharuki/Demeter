@@ -13,13 +13,13 @@ if (Meteor.isServer) {
       it('can add person', () => {
         const addPerson = Meteor.server.method_handlers['person.insert'];
 
-        addPerson.apply(userId,["jlarobello","1234","1234"])
+        addPerson.apply(userId,["jlarobello","1234","1234"]);
 
         // Verify that the method does what we expected
         assert.equal(Person.find().count(), 1);
 
         // Remove person
-        Person.remove({"username": "jlarobello"})
+        Person.remove({"username": "jlarobello"});
       }),
       it('can get person by username', () => {
         const addPerson = Meteor.server.method_handlers['person.insert'];
@@ -34,7 +34,7 @@ if (Meteor.isServer) {
         assert.equal(person.username, "jlarobello");
 
         // Remove person
-        Person.remove({"username": "jlarobello"})
+        Person.remove({"username": "jlarobello"});
       }),
       it('can add a badge to a person', () => {
         const addPerson = Meteor.server.method_handlers['person.insert'];
@@ -55,7 +55,7 @@ if (Meteor.isServer) {
         assert.equal(person.badges[1], "skldjf23434");
 
         // Remove person
-        Person.remove({"username": "jlarobello"})
+        Person.remove({"username": "jlarobello"});
       }),
       it('can get a persons badges', () => {
         const addPerson = Meteor.server.method_handlers['person.insert'];
@@ -76,13 +76,37 @@ if (Meteor.isServer) {
         assert.equal(badges[1], "skldjf23434");
 
         // Remove person
-        Person.remove({"username": "jlarobello"})
+        Person.remove({"username": "jlarobello"});
       }),
       it('can set a persons level', () => {
+        const addPerson = Meteor.server.method_handlers['person.insert'];
+        const getPerson = Meteor.server.method_handlers['person.getByUsername'];
+        const setLevel = Meteor.server.method_handlers['person.setLevel'];
 
+        addPerson.apply(userId,["jlarobello","1234","1234"]);
+        setLevel.apply(userId, ["jlarobello",2]);
+
+        var person = getPerson.apply(userId, ["jlarobello"]);
+
+        // Verify that the method does what we expected
+        assert.notEqual(person.level, 1);
+        assert.equal(person.level, 2);
+
+        // Remove person
+        Person.remove({"username": "jlarobello"})
       }),
       it('can check if a user exist', () => {
+        const addPerson = Meteor.server.method_handlers['person.insert'];
+        const getPerson = Meteor.server.method_handlers['person.getByUsername'];
+        const isExist = Meteor.server.method_handlers['person.isExist'];
 
+        addPerson.apply(userId,["jlarobello","1234","1234"]);
+
+        // Verify that the method does what we expected
+        assert.equal(isExist.apply(userId, ["jlarobello"]), true);
+
+        // Remove person
+        Person.remove({"username": "jlarobello"});
       })
     });
   });

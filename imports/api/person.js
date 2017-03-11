@@ -25,7 +25,7 @@ Meteor.methods({
       Person.insert({
         username,
         pass,
-        level:1,
+        level:Number(1),
         points:0,
         m2xkey,
         badges:[],
@@ -65,6 +65,19 @@ Meteor.methods({
     }
 
     return null;
+  },
+  'person.setLevel' (username, newLevel) {
+    check(username, String);
+    check(newLevel, Number);
+
+    if (Person.findOne({username})) {
+      Person.update({username}, {'$set': {level: Number(newLevel)}});
+    }
+  },
+  'person.isExist' (username) {
+    if (Person.findOne({username}))
+      return true;
+    return false;
   }
 })
 
