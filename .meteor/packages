@@ -18,3 +18,4 @@ ecmascript@0.6.3              # Enable ECMAScript2015+ syntax in app code
 shell-server@0.2.2            # Server-side component of the `meteor shell` command
 
 angular-templates
+practicalmeteor:mocha
