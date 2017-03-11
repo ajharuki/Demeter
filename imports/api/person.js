@@ -26,7 +26,7 @@ Meteor.methods({
         username,
         pass,
         level:Number(1),
-        points:0,
+        points:Number(0),
         m2xkey,
         badges:[],
       })
@@ -78,6 +78,23 @@ Meteor.methods({
     if (Person.findOne({username}))
       return true;
     return false;
+  },
+  'person.setPoints' (username, newPoints) {
+    check(username, String);
+    check(newPoints, Number);
+
+    if (Person.findOne({username})) {
+      Person.update({username}, {'$set': {points: Number(newPoints)}});
+    }
+  },
+  'person.getPoints' (username) {
+    check(username, String);
+
+    var person = Person.findOne({username});
+
+    if (person)
+      return person.points;
+    return -1;
   }
 })
 
