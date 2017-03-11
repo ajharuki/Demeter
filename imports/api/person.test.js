@@ -58,7 +58,25 @@ if (Meteor.isServer) {
         Person.remove({"username": "jlarobello"})
       }),
       it('can get a persons badges', () => {
+        const addPerson = Meteor.server.method_handlers['person.insert'];
+        const addBadge = Meteor.server.method_handlers['person.addBadge'];
+        const getPerson = Meteor.server.method_handlers['person.getByUsername'];
+        const getBadges = Meteor.server.method_handlers['person.getBadges'];
 
+        addPerson.apply(userId,["jlarobello","1234","1234"]);
+        addBadge.apply(userId,["jlarobello","kdlsakf3234"]);
+        addBadge.apply(userId,["jlarobello","skldjf23434"]);
+        addBadge.apply(userId,["jlarobello","skldjf23434"]);
+
+        var badges = getBadges.apply(userId, ["jlarobello"])
+
+        // Verify that the method does what we expected
+        assert.equal(badges.length, 2);
+        assert.equal(badges[0], "kdlsakf3234");
+        assert.equal(badges[1], "skldjf23434");
+
+        // Remove person
+        Person.remove({"username": "jlarobello"})
       }),
       it('can set a persons level', () => {
 

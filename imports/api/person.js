@@ -54,6 +54,17 @@ Meteor.methods({
         Person.update({username}, { $push: { badges: badgeId}});
       }
     }
+  },
+  'person.getBadges' (username) {
+    check(username, String);
+
+    var person = Person.findOne({username});
+
+    if (person) {
+      return person.badges;
+    }
+
+    return null;
   }
 })
 
