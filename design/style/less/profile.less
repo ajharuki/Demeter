@@ -1,0 +1,90 @@
+#status {
+	// background: black;
+	background: url('succulent-edited.jpg');
+	width: 100%;
+	height: 400px;
+	color: white;
+	.muli-xtra-light;
+	padding: 20px 20px 0px 20px;
+	background-image: url("../design/succulent-edited.jpg");
+    background-repeat: no-repeat;
+    // background: red
+    background-size: cover;
+    background-position: center;
+    display: block;
+	h1, h2 {
+		text-transform: uppercase;
+		font-size: 13px;
+		letter-spacing: 1px;
+	}
+	h2 {
+		text-transform: capitalize;
+		text-align: center;
+	}
+	li {
+		font-size: 12px;
+		text-align: right;
+		margin-bottom: 20px;
+		img {
+			width: 30px;
+		}
+		&:nth-of-type(4) {
+			margin-top: -5px;
+		}
+	}
+	.pad-this {
+		margin-top: 80%;
+		.circles {
+			border: 2px solid white;
+			border-radius: 50%;
+			color: white;
+			text-align: center;
+			height: 80px;
+			width: 80px;
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 20px;
+			h3 {
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 20px;
+				span {
+					font-size: 10px;
+					vertical-align: top;
+					padding-left: 2px;
+				}
+			}
+		}
+		h4 {
+			text-transform: uppercase;
+			font-size: 11px;
+			text-align: center;
+			letter-spacing: 1.5px;
+		}
+	}
+	.fixed-footer {
+		background: rgba(255,255,255, 0.2);
+		margin-left: -20px;
+		position: fixed;
+		max-width: 375px;
+		width: 375px;
+		bottom: 0;
+		z-index: 9999;
+		.footer-icons {
+			width: 19%;
+			display: inline-block;
+			margin: 0;
+			margin-bottom: -5px;	
+			.left-icons {
+				margin-left:-5px;	
+			}
+			img {
+				width: 25px;
+				display: block;
+				margin: 0 auto;
+				padding: 17px 0px 22px 0;	
+			}
+		}
+	}
+}
