@@ -13,13 +13,16 @@ if (Meteor.isServer) {
       it('can add person', () => {
         const addPerson = Meteor.server.method_handlers['person.insert'];
         addPerson.apply(1234,["jlarobello","1234","1234"])
-        
+
         // Verify that the method does what we expected
         assert.equal(Person.find().count(), 1);
 
         // Remove person
         Person.remove({"username": "jlarobello"})
-      });
+      }),
+      it('can get people by id', () => {
+        
+      })
     });
   });
 }
