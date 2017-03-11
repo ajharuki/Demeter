@@ -1,0 +1,437 @@
+/* HTML5 display-role reset for older browsers */
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html {
+  height: 100%;
+  min-height: 100%;
+}
+.container {
+  max-width: 375px;
+  height: 100%;
+  min-height: 100%;
+  background: black;
+  margin: 0 auto;
+}
+/* Typography */
+/* Web Fonts */
+body {
+  font-family: 'Muli', sans-serif;
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  height: 100%;
+}
+.muli-xtra-light {
+  font-family: 'Muli', sans-serif;
+  font-weight: 200;
+}
+.muli-light {
+  font-family: 'Muli', sans-serif;
+  font-weight: 300;
+}
+/* Links */
+a {
+  text-decoration: none;
+}
+/* Color Palette */
+.gray-text {
+  color: #ffffff;
+  opacity: 0.8;
+}
+.green-text {
+  color: #2ecc71;
+}
+.yellow-text {
+  color: #f1c40f;
+}
+.red-text {
+  color: #c0392b;
+}
+#status {
+  width: 100%;
+  height: 400px;
+  color: white;
+  font-family: 'Muli', sans-serif;
+  font-weight: 200;
+  padding: 20px 20px 0px 20px;
+  background-image: url("less/less/../design/succulent-edited.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: block;
+}
+#status h1,
+#status h2 {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+#status h2 {
+  text-transform: capitalize;
+  text-align: center;
+}
+#status li {
+  font-size: 12px;
+  text-align: right;
+  margin-bottom: 20px;
+}
+#status li img {
+  width: 30px;
+}
+#status li:nth-of-type(4) {
+  margin-top: -5px;
+}
+#status .pad-this {
+  margin-top: 80%;
+}
+#status .pad-this .circles {
+  border: 2px solid white;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  height: 80px;
+  width: 80px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+#status .pad-this .circles h3 {
+  position: relative;
+  top: 50%;
+  transform: translatey(-50%);
+  font-size: 20px;
+}
+#status .pad-this .circles h3 span {
+  font-size: 10px;
+  vertical-align: top;
+  padding-left: 2px;
+}
+#status .pad-this h4 {
+  text-transform: uppercase;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+#status .fixed-footer {
+  background: rgba(255, 255, 255, 0.2);
+  margin-left: -20px;
+  position: fixed;
+  max-width: 375px;
+  width: 375px;
+  bottom: 0;
+  z-index: 9999;
+}
+#status .fixed-footer .footer-icons {
+  width: 19%;
+  display: inline-block;
+  margin: 0;
+  margin-bottom: -5px;
+}
+#status .fixed-footer .footer-icons .left-icons {
+  margin-left: -5px;
+}
+#status .fixed-footer .footer-icons img {
+  width: 25px;
+  display: block;
+  margin: 0 auto;
+  padding: 17px 0px 22px 0;
+}
+/* Profile */
+#profile {
+  background: #5f5f65;
+  /* For browsers that do not support gradients */
+
+  background: -webkit-linear-gradient(#6d8e83, #5f5f65);
+  /* For Safari 5.1 to 6.0 */
+
+  background: -o-linear-gradient(#6d8e83, #5f5f65);
+  /* For Opera 11.1 to 12.0 */
+
+  background: -moz-linear-gradient(#6d8e83, #5f5f65);
+  /* For Firefox 3.6 to 15 */
+
+  background: linear-gradient(#6d8e83, #5f5f65);
+  /* Standard syntax */
+  width: 100%;
+  color: white;
+  font-family: 'Muli', sans-serif;
+  font-weight: 200;
+  padding: 20px 20px 0px 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  margin-bottom: 200px;
+}
+#profile h1,
+#profile h2 {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+#profile h2 {
+  text-transform: capitalize;
+  text-align: center;
+}
+#profile li {
+  font-size: 12px;
+  text-align: right;
+  margin-bottom: 20px;
+}
+#profile li img {
+  width: 15px;
+}
+#profile li:nth-of-type(4) {
+  margin-top: -5px;
+}
+#profile .bio {
+  margin-top: 40px;
+  text-align: center;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+#profile .bio .circles {
+  border: 2px solid white;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+#profile .bio .circles h3 {
+  position: relative;
+  top: 50%;
+  transform: translatey(-50%);
+  font-size: 20px;
+}
+#profile .bio .circles h3 span {
+  font-size: 10px;
+  vertical-align: top;
+  padding-left: 2px;
+}
+#profile .bio h4 {
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+#profile .bio p {
+  font-size: 14px;
+  padding-top: 18px;
+  font-family: 'Muli', sans-serif;
+  font-weight: 200;
+}
+#profile .bio ul {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+#profile .bio ul li {
+  display: inline;
+  padding: 0px 8px;
+}
+#profile .bio ul li img {
+  width: 22px;
+}
+#profile .grasshopper {
+  padding: 35px 0;
+  text-align: center;
+  font-size: 14px;
+}
+#profile .grasshopper-2 {
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 30px;
+}
+#profile .grasshopper-2 img {
+  width: 30px;
+  padding-bottom: 15px;
+}
+#profile .grasshopper-2 h3 {
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  opacity: 0.5;
+}
+#profile .grasshopper-2 h4 {
+  font-size: 20px;
+}
+#profile .pad-this {
+  margin-top: 30px;
+}
+#profile .pad-this .circles {
+  border: 2px solid white;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  height: 80px;
+  width: 80px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+#profile .pad-this .circles img {
+  width: 30px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translatey(-50%);
+}
+#profile h4 {
+  text-transform: uppercase;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+.fixed-footer {
+  background: rgba(95, 95, 101, 0.2);
+  margin-left: -20px;
+  position: fixed;
+  max-width: 375px;
+  width: 375px;
+  bottom: 0;
+  z-index: 9999;
+}
+.fixed-footer .footer-icons {
+  width: 19%;
+  display: inline-block;
+  margin: 0;
+  margin-bottom: -5px;
+}
+.fixed-footer .footer-icons .left-icons {
+  margin-left: -5px;
+}
+.fixed-footer .footer-icons img {
+  width: 25px;
+  display: block;
+  margin: 0 auto;
+  padding: 17px 0px 22px 0;
+}
