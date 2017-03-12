@@ -16,6 +16,7 @@ standard-minifier-js@1.2.2    # JS minifier run for production mode
 es5-shim@4.6.15                # ECMAScript 5 compatibility for older browsers.
 shell-server@0.2.2            # Server-side component of the `meteor shell` command
 
+practicalmeteor:mocha
 http
 templating
 ecmascript
