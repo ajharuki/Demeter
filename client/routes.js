@@ -17,4 +17,9 @@ Router.map(function () {
     path: '/index.html',
     template: 'index_file'
   });
+
+  this.route('community_file', {
+    path: '/community.html',
+    template: 'community_file'
+  });
 });
