@@ -26,6 +26,18 @@ if (Meteor.isClient) {
 
         var fullArray = Session.get('stream');
         var humidityArray = fullArray[0];
+
+
+        var d = document.getElementById("humidity")
+
+        if (humidityArray.value <= 40) {
+          d.style.borderColor = '#C0392B';
+        } else if (humidityArray.value > 40 && humidityArray.value < 50) {
+          d.style.borderColor = '#F1C40F';
+        } else {
+          d.style.borderColor = '#2ECC71';
+        }
+
         return humidityArray.value;
       }
     },
@@ -33,6 +45,17 @@ if (Meteor.isClient) {
       if (Session.get('stream') !== undefined) {
         var fullArray = Session.get('stream');
         var tempArray = fullArray[1];
+
+        var d = document.getElementById("temp")
+
+        if (tempArray.value <= 30) {
+          d.style.borderColor = '#2ECC71';
+        } else if (tempArray.value > 30 && tempArray.value < 40) {
+          d.style.borderColor= '#F1C40F';
+        } else {
+          d.style.borderColor = '#C0392B';
+        }
+
         return tempArray.value;
       }
     },
@@ -41,6 +64,17 @@ if (Meteor.isClient) {
 
         var fullArray = Session.get('stream');
         var lightArray = fullArray[2];
+
+        var d = document.getElementById("light")
+
+        if (lightArray.value <= 70) {
+          d.style.borderColor = '#2ECC71';
+        } else if (lightArray.value > 70 && lightArray.value < 80) {
+          d.style.borderColor= '#F1C40F';
+        } else {
+          d.style.borderColor = '#C0392B';
+        }
+
         return lightArray.value;
       }
     }
