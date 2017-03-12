@@ -20,3 +20,4 @@ http
 templating
 ecmascript
 session
+iron:router

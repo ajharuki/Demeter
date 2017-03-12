@@ -1,14 +1,21 @@
+
+
 <head>
   <title>Todo List</title>
 </head>
 
 <body>
+
+</body>
+
+<template name="main_layout" >
+
   <div class="container">
-    <p>Hello World!</p>
-    {{ > dataStream}}
+    {{> yield}}
 
   </div>
-</body>
+
+</template>
 
 <template name="dataStream">
 
@@ -18,3 +25,4 @@
   <p> {{pullLight}} </p>
 
 </template>
+
